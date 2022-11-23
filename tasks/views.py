@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def helloworld(request):
-    return HttpResponse('<h1>Hey, this is a test. Remember you are a bitch! Whatever@whenever!!!!</h1>')
+    return render(request, 'signup.html', {
+        'form': UserCreationForm
+    })
+        
